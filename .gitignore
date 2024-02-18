@@ -1,0 +1,11 @@
+target/
+
+.direnv/
+
+.idea/
+*.iml
+
+.DS_Store
+
+.volume/
+.data/
