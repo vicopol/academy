@@ -7,8 +7,6 @@ spring:
     connect-retries: 3
   cloud:
     aws:
-      region:
-        static: ca-central-1
       s3:
         endpoint: http://s3.localhost.localstack.cloud:4566
       sqs:

@@ -1,6 +1,6 @@
 services:
   localstack:
-    image: localstack/localstack:3.0.2
+    image: localstack/localstack:4.12
     environment:
       - DEBUG=1
       - DOCKER_HOST=unix:///var/run/docker.sock

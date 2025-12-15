@@ -51,7 +51,7 @@ class ApplicationTest {
             new PostgreSQLContainer<>(DockerImageName.parse("postgres:15.3"));
     @Container
     static LocalStackContainer localStackContainer =
-            new LocalStackContainer(DockerImageName.parse("localstack/localstack:3.0.2"))
+            new LocalStackContainer(DockerImageName.parse("localstack/localstack:4.12"))
                     .withEnv("LOCALSTACK_HOST", "localhost.localstack.cloud")
                     .withServices(LocalStackContainer.Service.S3, LocalStackContainer.Service.SQS);
     static String queueUrl;
@@ -146,7 +146,7 @@ class ApplicationTest {
 
         assertNotNull(rows);
         assertEquals(1, rows.size());
-        assertEquals(contents, rows.get(0).get("contents"));
+        assertEquals(contents, rows.getFirst().get("contents"));
     }
 
     static void assertEmptyQueue() {
